@@ -12,45 +12,38 @@ header {
     color: #fff;
     padding: 40px;
     text-align: center;
-    border-bottom: 5px solid #0056b3; /* Darker blue border at the bottom of the header */
 }
 
 main {
     padding: 20px;
+    overflow: auto; /* Clear floats if any */
 }
 
 section {
     background: #fff;
-    margin: 20px auto;
+    margin: 40px auto; /* Adjust top and bottom margin as necessary */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    position: relative; /* Needed for absolute positioning of the pseudo-elements (arrows) */
+    position: relative; /* For pseudo-element positioning */
     max-width: 800px;
 }
 
+/* The :not(:last-of-type) selector targets all sections except the last one */
 section:not(:last-of-type)::after {
     content: '';
     position: absolute;
-    bottom: -30px; /* Distance from the bottom of the section */
-    left: 50%; /* Centers the arrow */
-    transform: translateX(-50%); /* Aligns the center of the arrow with the center of the section */
-    width: 0;
-    height: 0;
+    bottom: -30px; /* Adjust as necessary */
+    left: 50%;
+    transform: translateX(-50%);
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-top: 30px solid #007bff; /* The blue arrow */
-    z-index: 10;
-}
-
-/* Increase the bottom margin of sections to make space for the arrows */
-section {
-    margin-bottom: 60px;
+    border-top: 30px solid #007bff; /* Blue arrow */
 }
 
 h1, h2, h3 {
     margin: 0;
-    padding-bottom: .5em;
+    padding-bottom: 0.5em;
 }
 
 h1 {
@@ -63,7 +56,6 @@ h2 {
 
 h3 {
     color: #007bff;
-    margin-top: 0;
 }
 
 ul {
@@ -75,7 +67,6 @@ li {
     margin-bottom: 10px;
 }
 
-/* Responsive design adjustments */
 @media (max-width: 768px) {
     header {
         padding: 20px;
