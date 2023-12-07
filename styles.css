@@ -26,6 +26,7 @@ section {
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     position: relative; /* For pseudo-element positioning */
+    overflow: hidden; /* Prevents arrows from overflowing */
     max-width: 800px;
 }
 
@@ -35,10 +36,12 @@ section:not(:last-of-type)::after {
     position: absolute;
     bottom: -30px; /* Adjust as necessary */
     left: 50%;
-    transform: translateX(-50%);
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 30px solid #007bff; /* Blue arrow */
+    transform: translateX(-50%) rotate(45deg);
+    width: 30px; /* Arrow width */
+    height: 30px; /* Arrow height */
+    background: #007bff; /* Arrow color */
+    z-index: 2; /* Ensures the arrow is above the sections */
+    border-radius: 4px; /* Rounds the corners of the arrow */
 }
 
 h1, h2, h3 {
