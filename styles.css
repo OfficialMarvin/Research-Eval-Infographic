@@ -38,10 +38,10 @@ section:not(:last-of-type)::after {
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
     width: 30px; /* Arrow width */
-    height: 30px; /* Arrow height */
+    height: 35px; /* Arrow height */
     background: #007bff; /* Arrow color */
-    z-index: 2; /* Ensures the arrow is above the sections */
-    border-radius: 4px; /* Rounds the corners of the arrow */
+    z-index: 3; /* Ensures the arrow is above the sections */
+    border-radius: 7px; /* Rounds the corners of the arrow */
 }
 
 h1, h2, h3 {
